@@ -1,8 +1,8 @@
 {
-  "name": "hapi-auth",
+  "name": "",
   "version": "0.0.0",
   "authors": [
-    "Chyld Medford <chyld.medford@gmail.com>"
+    "Liza Carter <lizahcarter@gmail.com>"
   ],
   "main": "client/index.js",
   "license": "MIT",

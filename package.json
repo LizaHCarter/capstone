@@ -1,13 +1,13 @@
 {
-  "name": "hapi-technologies",
+  "name": "capstone",
   "version": "1.0.0",
-  "description": "Hapi Technologies",
+  "description": "SQL db and mobile app to help servers track and budget their tips",
   "engines": {
     "node": "0.10.x"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nss-cohort-2014-06-07/hapi-technologies"
+    "url": "https://github.com/lizahcarter/capstone"
   },
   "bin": {
     "coveralls": "./node_modules/coveralls/bin/coveralls.js"
@@ -20,7 +20,7 @@
     "e2e": "make test-e2e",
     "coveralls": "make test-cov | coveralls"
   },
-  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "author": "Liza Carter <lizahcarter@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.1.4",
