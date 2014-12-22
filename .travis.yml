@@ -1,0 +1,31 @@
+language: node_js
+node_js:
+  - "0.10.33"
+services:
+  - postgresql
+addons:
+  postgresql: "9.3"
+  sauce_connect: true
+notifications:
+  email: false
+script:
+  - npm run syntax
+  - npm test
+before_script:
+  - psql -c 'create database evernode_test;' -U postgres
+  - cd test/scripts; ./create-db.sh evernode_test; cd ../..;
+  - PORT=9001 node server/index.js&
+  - sleep 5
+after_script:
+  - npm run coveralls
+  - npm run e2e
+env:
+  global:
+    - DATABASE_URL=postgres://postgres@localhost/evernode_test
+    - AWS_BUCKET=chyld-evernode-test
+    - SAUCE_USERNAME=chyld-evernode
+    - SAUCE_ACCESS_KEY=9b811aef-b57f-4f50-b679-7472a3899b85
+    # AWS_SECRET_ACCESS_KEY
+    - secure: pYtuRuRcZtF087cexvh+BLMRdag11vuxbpQP4DCl5yj3SCKgFW738dKAACnnZB8oA4MobiWedP9xKhyp5Y2h67vaY5bPJDG+i699a5nHZnMiphZdcC6Bf46zQY6kVharaJoRhT8WJP59U9eGUZio0iUdlQkfSXcg/84NSy0jE5Y=
+    # AWS_ACCESS_KEY_ID
+    - secure: KPbqns2d7D0deUmhUZVz8pEBCL0egRKXafS6QrgbIN8a1jTk8roUEc9k9KcIpY9ji/4LLJRs1CFc121iJ+TleUvrpCjIFnBoT6aQClGJqz3ZV6oUEkVxnwMXwP9sy7XyJefgLy7z1qVblNDl0dmvnWyBDKnuu6nq18IcdDBT6PQ=
