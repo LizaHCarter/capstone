@@ -5,8 +5,8 @@ module.exports = [
   {method: 'post',   path: '/register',                     config: require('../definitions/users/register')},
   {method: 'post',   path: '/login',                        config: require('../definitions/users/login')},
   {method: 'delete', path: '/logout',                       config: require('../definitions/users/logout')},
-  {method: 'get',    path: '/status',                       config: require('../definitions/users/status')}
-  //{method: 'post',   path: '/notes',                        config: require('../definitions/notes/create')},
+  {method: 'get',    path: '/status',                       config: require('../definitions/users/status')},
+  {method: 'post',   path: '/tips',                         config: require('../definitions/tips/create')}
   //{method: 'get',    path: '/notes',                        config: require('../definitions/notes/query')},
   //{method: 'post',   path: '/notes/{noteId}/upload',        config: require('../definitions/notes/upload')},
   //{method: 'post',   path: '/notes/{noteId}/upload-mobile', config: require('../definitions/notes/upload-mobile')},

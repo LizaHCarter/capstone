@@ -9,7 +9,6 @@
       $scope.submit = function(){
         if($scope.mode === 'register'){
           User.register($scope.user).then(function(response){
-            console.log(response);
             $state.go('login');
           }, function(){
             $scope.user = {};

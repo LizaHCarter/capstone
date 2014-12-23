@@ -12,7 +12,8 @@ nav.top-bar(data-topbar, role="navigation", ng-controller='NavCtrl')
       li: a(ui-sref='register') Register
       li: a(ui-sref='login') Login
     ul.right(ng-show='rootuser.username')
-      li: a(ui-sref='home') Home
-      li: a(ui-sref='notes.list') Notes
+      li: a(ui-sref='home') home
+      li: a(ui-sref='tips') add tips
+      li: a(ui-sref='profile') profile
       li.divider
-      li: a(ng-click='logout()') Logout {{rootuser.username}}
+      li: a(ng-click='logout()') logout
