@@ -1,7 +1,7 @@
 
 .row
     .small-1.medium-1.columns
-    .small-12.medium-4.columns
+    .small-12.medium-5.columns
         form
             fieldset
                 legend Add Tips
@@ -19,5 +19,5 @@
                         span.prefix $       
                     .small-9.columns
                         input(type='number', ng-model='tip.tips')
-                button.small.radius.success(ng-click='create(tip, date)') Add
-    .small-1.medium-7.columns
+                button.radius.expand(ng-click='create(tip, date)') Add
+    .small-1.medium-6.columns

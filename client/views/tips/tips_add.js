@@ -11,8 +11,7 @@
             var t = tip.date;
             tip.day = days[t.getDay()];
             Tip.create(tip).then(function(response){
-                console.log('client/view', response.data);
-                $state.go('home');
+                $state.go('tips.detail');
             }, function(){
                 $scope.tip = {};
             });
