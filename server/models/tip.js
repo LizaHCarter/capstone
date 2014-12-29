@@ -8,10 +8,8 @@ function Tip(){
 }
 
 Tip.create = function(user, obj, cb){
-  pg.query('insert into tips(sales, tip, created_at, day, user_id) values ($1, $2, $3, $4)', [obj.sales, obj.tips, obj.date, obj.day, user.id], function(err, results){
-    console.log('server/model:err', err);
-    console.log('server/model:results', results);
-    cb(err, results && results.rows ? results.rows[0].add_note : null);
+  pg.query('insert into tips(user_id, sales, tip, created_at, day) values ($1, $2, $3, $4, $5)', [user.id, obj.sales, obj.tips, obj.date, obj.day], function(err, results){
+    cb(err, null);
   });
 };
 
