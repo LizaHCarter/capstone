@@ -13,7 +13,7 @@ nav.top-bar(data-topbar, role="navigation", ng-controller='NavCtrl')
       li: a(ui-sref='login') Login
     ul.right(ng-show='rootuser.username')
       li: a(ui-sref='home') home
-      li: a(ui-sref='tips') add tips
+      li: a(ui-sref='tips.add') add tips
       li: a(ui-sref='profile') profile
       li.divider
       li: a(ng-click='logout()') logout

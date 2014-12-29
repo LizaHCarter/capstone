@@ -1,0 +1,30 @@
+
+.row
+    .small-5.columns
+        form
+            fieldset
+                legend Add Tips
+                label Date
+                    input(type='date', ng-model='tip.date')
+                label Day of the Week
+                select(ng-model='tip.day')
+                    option Monday
+                    option Tuesday
+                    option Wednesday
+                    option Thursday
+                    option Friday
+                    option Saturday
+                    option Sunday
+                label Sales
+                .row.collapse.prefix-radius
+                    .small-3.columns
+                        span.prefix $       
+                    .small-9.columns
+                        input(type='number', ng-model='tip.sales')
+                label Walking Tips
+                .row.collapse.prefix-radius
+                    .small-3.columns
+                        span.prefix $       
+                    .small-9.columns
+                        input(type='number', ng-model='tip.tips')
+                button.small.radius.success(ng-click='create()') Add

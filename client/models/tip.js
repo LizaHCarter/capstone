@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('capstone')
-  .factory('Note', ['$http', function($http){
+  .factory('Tip', ['$http', function($http){
 
     function create(tip){
       console.log('client/model:', tip);
