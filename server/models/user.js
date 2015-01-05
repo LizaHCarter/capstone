@@ -45,4 +45,10 @@ User.edit = function(user, obj, cb){
     });
 };
 
+User.create = function(user, obj, cb){
+    pg.query('insert into expenses (user_id, rent, groceries, utilities, savings, other, percent) values ($1, $2, $3, $4, $5, $6, $7)',[user.id, obj.rent, obj.groceries, obj.utilities, obj.savings, obj.other, obj.percent], function(err, results){
+        cb(err, null);
+    });
+};
+
 module.exports = User;

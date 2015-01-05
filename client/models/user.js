@@ -15,10 +15,13 @@
       function show(){
         return $http.get('/profile');
       }
-      function create(profile){
+      function update(profile){
         console.log(profile);
+        return $http.post('/profile/update', profile);
+      }
+      function create(profile){
         return $http.post('/profile', profile);
       }
-      return {register:register, login:login, logout:logout, show:show, create:create};
+      return {register:register, login:login, logout:logout, show:show, update:update, create:create};
     }]);
 })();

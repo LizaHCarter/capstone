@@ -6,7 +6,8 @@ module.exports = [
   {method: 'post',   path: '/login',                        config: require('../definitions/users/login')},
   {method: 'delete', path: '/logout',                       config: require('../definitions/users/logout')},
   {method: 'get',    path: '/status',                       config: require('../definitions/users/status')},
-  {method: 'post',   path: '/profile',                      config: require('../definitions/users/edit_profile')},
+  {method: 'post',   path: '/profile/update',               config: require('../definitions/users/edit_profile')},
+  {method: 'post',   path: '/profile',                      config: require('../definitions/users/create_profile')},
   {method: 'get',    path: '/profile',                      config: require('../definitions/users/view_profile')},
   {method: 'post',   path: '/tips',                         config: require('../definitions/tips/create')}
   //{method: 'get',    path: '/notes',                        config: require('../definitions/notes/query')},

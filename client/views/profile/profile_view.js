@@ -32,9 +32,14 @@
         delete profile.total;
         delete profile.created_at;
         delete profile.updated_at;
-        User.create(profile).then(function(response){
+        User.update(profile).then(function(response){
             console.log(response);
-            $scope.toggle = false;
+            $state.go('home');
+        });
+    };
+    $scope.send = function(profile){
+        User.create(profile).then(function(response){
+            $state.go('home');
         });
     };
   }]);
