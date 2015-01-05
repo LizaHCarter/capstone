@@ -12,10 +12,13 @@
       function logout(){
         return $http.delete('/logout');
       }
-      function profile(expenses){
-        console.log('client/model:', expenses);
-        return $http.post('/profile', expenses);
+      function show(){
+        return $http.get('/profile');
       }
-      return {register:register, login:login, logout:logout, profile:profile};
+      function create(profile){
+        console.log(profile);
+        return $http.post('/profile', profile);
+      }
+      return {register:register, login:login, logout:logout, show:show, create:create};
     }]);
 })();

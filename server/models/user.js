@@ -31,8 +31,16 @@ User.login = function(obj, cb){
   });
 };
 
-User.addProfile = function(user, obj, cb){
-    pg.query('insert into expenses(user_id, rent, groceries, utilities, savings, other, percent) values ($1, $2, $3, $4, $5, $6, $7)',[user.id, obj.rent, obj.groceries, obj.utilities, obj.savings, obj.other, obj.percent], function(err, results){
+User.show = function(user, cb){
+    pg.query('select *, rent + groceries + utilities + savings + other as total from expenses where user_id = $1', [user.id], function(err, results){
+    cb(err, results && results.rows ? results.rows[0] : null);
+  });
+};
+
+User.edit = function(user, obj, cb){
+    console.log('server/model: user', user);
+    console.log('server/model: obj', obj);
+    pg.query('update expenses set user_id = $1, rent = $2, groceries = $3, utilities = $4, savings = $5, other = $6, percent = $7',[user.id, obj.rent, obj.groceries, obj.utilities, obj.savings, obj.other, obj.percent], function(err, results){
         cb(err, null);
     });
 };

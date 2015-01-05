@@ -1,0 +1,46 @@
+.row
+    .small-12.columns
+        h1 Profile
+
+        table
+            thead
+                tr
+                    th Expenses
+                    th(ng-hide='toggle') Your Amounts
+                    th(ng-show='toggle') Update
+            tbody
+                tr
+                    td Rent
+                    td(ng-hide='toggle') {{profile.rent}}
+                    td(ng-show='toggle') 
+                        input(type='text', ng-model='profile.rent')
+                tr
+                    td Groceries
+                    td(ng-hide='toggle') {{profile.groceries}}
+                    td(ng-show='toggle')  
+                        input(type='text', ng-model='profile.groceries')
+                tr
+                    td Utilities
+                    td(ng-hide='toggle') {{profile.utilities}}
+                    td(ng-show='toggle')  
+                        input(type='text', ng-model='profile.utilities')
+                tr
+                    td Savings
+                    td(ng-hide='toggle') {{profile.savings}}
+                    td(ng-show='toggle')  
+                        input(type='text', ng-model='profile.savings')
+                tr
+                    td Other
+                    td(ng-hide='toggle') {{profile.other}}
+                    td(ng-show='toggle')  
+                        input(type='text', ng-model='profile.other')
+                tr
+                    td Percent
+                    td(ng-hide='toggle') {{profile.percent}}
+                    td(ng-show='toggle')  
+                        input(type='text', ng-model='profile.percent')        
+                tr(ng-hide='toggle')
+                    td Total Expenses
+                    td {{profile.total}}
+        button.radius.expand(ng-hide='toggle', ng-click='edit()') Edit   
+        button.radius.expand(ng-show='toggle', ng-click='submit(profile)') Submit   
