@@ -39,7 +39,10 @@
     };
     $scope.send = function(profile){
         User.create(profile).then(function(response){
-            $state.go('home');
+            User.show($state.params.userId).then(function(response){
+                $scope.profile = response.data;
+                $state.reload();
+            });
         });
     };
   }]);
