@@ -38,11 +38,19 @@
         });
     };
     $scope.send = function(profile){
+        if(!profile.groceries){profile.groceries = '0';}
+        if(!profile.utilities){profile.utilities = '0';}
+        if(!profile.savings){profile.savings = '0';}
+        if(!profile.other){profile.other = '0';}
+        if(!profile.percent){profile.percent = '0';}
         User.create(profile).then(function(response){
-            User.show($state.params.userId).then(function(response){
-                $scope.profile = response.data;
-                $state.reload();
-            });
+            console.log(profile);
+            //$state.reload();
+            //User.show($state.params.userId).then(function(response){
+                //$scope.profile = response.data;
+                //$state.reload();
+            //});
+            $state.go('home');
         });
     };
   }]);

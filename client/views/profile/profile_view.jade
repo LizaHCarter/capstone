@@ -10,7 +10,7 @@
                     th(ng-show='toggle') Update
             tbody
                 tr
-                    td Rent
+                    td Rent*
                     td(ng-hide='toggle') {{profile.rent}}
                     td(ng-show='toggle') 
                         input(type='text', ng-model='profile.rent')
@@ -35,13 +35,14 @@
                     td(ng-show='toggle')  
                         input(type='text', ng-model='profile.other')
                 tr
-                    td Percent
+                    td Percent*
                     td(ng-hide='toggle') {{profile.percent}}
                     td(ng-show='toggle')  
                         input(type='text', ng-model='profile.percent')        
                 tr(ng-hide='toggle')
                     td Total Expenses
                     td {{profile.total}}
+        p * denotes required fields
         button.radius.expand(ng-hide='toggle', ng-click='edit()') Update   
         button.radius.expand(ng-show='toggle', ng-click='submit(profile)') Submit        
 .row(ng-hide='profile.total')
@@ -49,18 +50,19 @@
         form
             fieldset
                 legend Create Profile
-                label Rent
+                label Rent*
                 input(type='text', ng-model='profile.rent')
                 label Monthly Groceries
                 input(type='text', ng-model='profile.groceries')
                 label Utilities
                 input(type='text', ng-model='profile.utilities')
-                label Savings(optional)
+                label Savings
                 input(type='text', ng-model='profile.savings')
-                label Other(optional)
+                label Other
                 input(type='text', ng-model='profile.other')
-                label Percent
-                input(type='text', ng-model='profile.percent')
-                button(ng-click='send(profile)') Save
+                label Percent Of Income Put Toward Monthly Expenses*
+                input(type='text', ng-model='profile.percent', value='75')
+            p * denotes required fields    
+            button(ng-click='send(profile)') Save
                     
                 

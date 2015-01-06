@@ -1,8 +1,8 @@
 create table expenses(
   id serial primary key,
   rent money not null,
-  groceries money,
-  utilities money,
+  groceries money default 0,
+  utilities money default 0,
   savings money default 0,
   other money default 0,
   percent varchar(25),
