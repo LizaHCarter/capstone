@@ -19,4 +19,18 @@ Tip.show = function(user, tipId, cb){
     });
 };
 
+Tip.query = function(user, cb){
+    pg.query('select * from total_averages($1)',[user.id], function(err, results1){
+        cb(err, results1, function(user, cb){
+            pg.query('select * from averages_by_day($1)',[user.id], function(err, results2){
+                cb(err, results2,  function(user, cb){
+                    pg.query('select * from progress_to_goals($1)',[user.id], function(err, results3){
+                        cb(err, results3)
+                    });
+                });
+            });
+        });
+    });
+};
+
 module.exports = Tip;
