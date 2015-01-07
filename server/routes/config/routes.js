@@ -9,7 +9,8 @@ module.exports = [
   {method: 'post',   path: '/profile/update',               config: require('../definitions/users/edit_profile')},
   {method: 'post',   path: '/profile',                      config: require('../definitions/users/create_profile')},
   {method: 'get',    path: '/profile',                      config: require('../definitions/users/view_profile')},
-  {method: 'post',   path: '/tips',                         config: require('../definitions/tips/create')}
+  {method: 'post',   path: '/tips',                         config: require('../definitions/tips/create')},
+  {method: 'get',    path: '/tips/{tipId}',                 config: require('../definitions/tips/show')}
   //{method: 'get',    path: '/notes',                        config: require('../definitions/notes/query')},
   //{method: 'post',   path: '/notes/{noteId}/upload',        config: require('../definitions/notes/upload')},
   //{method: 'post',   path: '/notes/{noteId}/upload-mobile', config: require('../definitions/notes/upload-mobile')},

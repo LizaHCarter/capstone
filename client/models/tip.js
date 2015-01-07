@@ -7,6 +7,9 @@
     function create(tip){
       return $http.post('/tips', tip);
     }
-    return {create:create};
+    function show(tipId){
+        return $http.get('/tips/'+tipId);
+    }
+    return {create:create, show:show};
   }]);
 })();

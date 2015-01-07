@@ -13,4 +13,10 @@ Tip.create = function(user, obj, cb){
   });
 };
 
+Tip.show = function(user, tipId, cb){
+    pg.query('select * from tips where user_id = $1 and id = $2', [user.id, tipId], function(err, results){
+        cb(err, results && results.rows ? results.rows[0] : null);
+    });
+};
+
 module.exports = Tip;
